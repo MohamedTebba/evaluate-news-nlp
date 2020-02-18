@@ -1,0 +1,19 @@
+@import './colors.scss';
+
+footer {
+    padding: 5rem 1rem;
+    color: $content-color;
+
+    p{
+        margin: auto;
+        width: 18rem;
+        line-height: 170%;
+        font-weight: 300;
+        font-size: 0.8rem;
+        text-align: center;
+
+        span{
+            text-transform: capitalize;
+        }
+    }
+}

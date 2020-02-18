@@ -1,0 +1,61 @@
+@import './colors.scss';
+
+%text {
+    font-size: 1rem;
+    color: $secondary-color;
+}
+
+#results {
+    margin: auto;
+    max-width: 750px;
+    border-radius: .5rem;
+    background-color: $content-color;
+    color: $primary-color;
+    padding: 3rem;
+    box-shadow: 0 5px 10px #79420c;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto;
+    grid-gap: 2rem;
+
+    span {
+        @extend %text;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+        color: $primary-color;
+    }
+
+    .tone {
+        grid-column: 1/2;
+        grid-row: 1/2;
+
+        span {
+            display: block;
+            padding: 0.8rem 0;
+        }
+
+    }
+
+    article {
+        grid-column: 2/3;
+        grid-row: 1/3;
+        line-height: 170%;
+        width: 30rem;
+
+        p {
+            @extend %text;
+        }
+
+        &>* {
+            display: block;
+            padding: .4rem;
+        }
+
+
+    }
+
+
+
+}

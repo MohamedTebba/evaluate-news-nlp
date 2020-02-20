@@ -40,17 +40,21 @@
         <p><span>n-l-p</span> articles evaluator <span>udacity</span> nanodegree project by <span>mohamed
                 tebba</span></p>
     </footer>
-
-</body>
-
-<script>
-    // Check that service workers are supported
+    <!-- <script>
+        
+            
     if ('serviceWorker' in navigator) {
         // Use the window load event to keep the page load performant
         window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/service-worker.js');
-        });
+            navigator.serviceWorker.register('../../../dist/service-worker.js')
+        })
+
     }
-</script>
+    
+       
+    </script> -->
+</body>
 
 </html>
+
+<!-- {enabled: env.production} -->

@@ -4,12 +4,10 @@ var path = require('path')
 //require envirement variables
 const dotenv = require('dotenv')
 dotenv.config()
-
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
 const aylien = require('aylien_textapi')
 const bodyParser = require('body-parser')
-
 
 const textApi = new aylien({
     application_id: process.env.API_ID,
@@ -103,11 +101,12 @@ app.get('*', (req, res) => {
 
 })
 
-const port = 8085
+const port = 3030
 // designates what port the app will listen to for incoming requests
 app.listen(port, () => {
     console.log(`App listening on port ${port}!`)
 })
+
 
 
 //https://www.huffpost.com/entry/us-immigration-system-citizenship_n_5e20ce5dc5b6321176104d65

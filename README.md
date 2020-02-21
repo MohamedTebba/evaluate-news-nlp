@@ -6,7 +6,7 @@ This tool will give us back pertinent information about the article, whether the
 - `npm run build-dev`: to run development mode
 - `npm run build-prod`: to build the production version of the project
 - `npm run start`: to run the express server
-- `npm run test`: to test the project functionallities, make sure that the express server is started first
+- `npm run test`: to test the project functionallities
 
 ## Getting started
 - execute the command: `npm install` to install the required packages.

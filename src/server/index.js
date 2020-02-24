@@ -101,10 +101,11 @@ app.get('*', (req, res) => {
 
 })
 
-const port = 3030
+const port = 7079
 // designates what port the app will listen to for incoming requests
 app.listen(port, () => {
     console.log(`App listening on port ${port}!`)
+   
 })
 
 

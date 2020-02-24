@@ -30,9 +30,6 @@ module.exports = {
             filename: "./index.html",
         }),
         new MiniCssExtractPlugin({filename: '[name].css'}),
-        new worboxPlugin.GenerateSW({
-            skipWaiting: true,
-            clientsClaim: true
-        })
+        new worboxPlugin.GenerateSW()
     ]
 }

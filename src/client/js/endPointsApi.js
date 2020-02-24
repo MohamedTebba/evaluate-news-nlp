@@ -17,6 +17,7 @@ const postData = async (url = "", data = {}) => {
         const newData = await response.json();
         return newData;
     } catch (error) {
+        console.log("error",error)
         alert("an error has occurred while sending data!\n try again!");
     }
 };

@@ -1,6 +1,7 @@
 import { domItems } from "./domItems";
 import { checkForUrl } from "./urlChecker";
 import {postData, getData} from './endPointsApi'
+
 // to resovlve the problem: egeneratorRuntime is not defined, I imported babel-polyfill
 import 'babel-polyfill';
 import 'whatwg-fetch'
@@ -11,10 +12,10 @@ const returnData = (data, element, catcher) => (data ? element : catcher);
 const updateUI = () => {
 
    domItems.results.innerHTML = ''
-   getData('*').then(res => {
+   
+   getData('http://localhost:7079/*').then(res => {
        const data = res
        domItems.spinner.style.display = 'none'
-       // domItems.spinner.style.display = 'none'
        domItems.arrow.style.display = 'block'
        setTimeout(() => {
            domItems.arrow.style.display = 'none'
@@ -54,16 +55,26 @@ const updateUI = () => {
                 "no article is available"
             )}
         </article>`;
-        });
+        })
+        
     };
     
-    const handleSubmit = event => {
+    const handleSubmit = async( event) => {
     event.preventDefault();
     const url = domItems.urlInput.value;
 
     if (url) {
         if (checkForUrl(url)) {
-            postData('/', { url });
+            try {
+                const a = await fetch('http://localhost:7079')
+                if(a.status === 200){
+                    postData('http://localhost:7079/', { url })
+
+                }
+            } catch (error) {
+                alert('express server is offline, run the express server and try again.')
+            }
+           
             domItems.spinner.style.display = 'block'
             updateUI();
                         

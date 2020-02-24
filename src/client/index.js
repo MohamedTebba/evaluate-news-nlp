@@ -8,4 +8,6 @@ import './styles/results.scss'
 import {handleSubmit} from './js/formHandler'
 import {domItems} from './js/domItems'
 
+
 domItems.submit.addEventListener('click',handleSubmit)
+

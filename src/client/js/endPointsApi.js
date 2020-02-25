@@ -4,22 +4,23 @@ import 'babel-polyfill';
 import 'whatwg-fetch';
 
 const postData = async (url = "", data = {}) => {
+    
     const response = await fetch(url, {
         method: "POST",
         credentials: "same-origin",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
         },
         body: JSON.stringify(data)
     });
-
-    try {
-        const newData = await response.json();
-        return newData;
-    } catch (error) {
-        console.log("error",error)
-        alert("an error has occurred while sending data!\n try again!");
-    }
+        response.json()
+            .then((data) => {
+                console.log(data)
+                return data
+            })
+            .catch((err) => {
+                console.log('cached err', err)
+            })
 };
 
 const getData = async url => {

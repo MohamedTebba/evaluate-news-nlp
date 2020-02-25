@@ -68,7 +68,7 @@ const updateUI = () => {
             try {
                 const a = await fetch('http://localhost:7079')
                 if(a.status === 200){
-                    postData('http://localhost:7079/', { url })
+               postData('http://127.0.0.1:7079/',{url})
 
                 }
             } catch (error) {
